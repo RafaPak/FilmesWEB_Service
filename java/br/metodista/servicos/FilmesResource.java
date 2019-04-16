@@ -6,6 +6,8 @@
  */
 package br.metodista.servicos;
 
+import bd.daos.Filmes;
+import bd.dbos,Filme;
 import com.google.gson.Gson;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
@@ -23,7 +25,7 @@ import javax.ws.rs.PathParam;
 /**
  * REST Web Service
  *
- * @author u18206
+ * @author u18206 & 18181
  */
 @Path("filmes")
 public class FilmesResource
@@ -36,9 +38,9 @@ public class FilmesResource
     {
         filmes = new ArrayList<Filme>();
         
-        //for ()
+        for (Filme fil: Filmes.getFilmes())
         {
-            filmes.add();
+            filmes.add(fil);
         }
         
 //        filmes.add(new Filme(1L, "007: Operação Skyfall", 
